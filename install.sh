@@ -75,6 +75,8 @@ gotools["nmapurls"]="go install -v github.com/sdcampbell/nmapurls@latest"
 gotools["shortscan"]="go install -v github.com/bitquark/shortscan/cmd/shortscan@latest"
 gotools["sns"]="go install github.com/sw33tLie/sns@latest"
 gotools["ppmap"]="go install -v github.com/kleiton0x00/ppmap@latest"
+gotools["sourcemapper"]="go install -v github.com/denandz/sourcemapper@latest"
+gotools["jsluice"]="go install -v github.com/BishopFox/jsluice/cmd/jsluice@latest"
 
 # Declaring repositories and their paths
 declare -A repos
@@ -108,6 +110,7 @@ repos["SwaggerSpy"]="UndeadSec/SwaggerSpy"
 repos["LeakSearch"]="JoelGMSec/LeakSearch"
 repos["ffufPostprocessing"]="Damian89/ffufPostprocessing"
 repos["misconfig-mapper"]="intigriti/misconfig-mapper"
+repos["Spoofy"]="MattKeeley/Spoofy"
 
 function banner() {
 	tput clear
@@ -439,7 +442,7 @@ install_tools
 
 printf "${bblue}\n Running: Downloading required files ${reset}\n\n"
 ## Downloads
-[[ ! -f ~/.config/amass/config.ini ]] && wget -q -O ~/.config/amass/config.ini https://raw.githubusercontent.com/owasp-amass/amass/master/examples/config.ini
+[[ ! -f ~/.config/amass/config.ini ]] && wget -q -O ~/.config/amass/config.ini https://gist.githubusercontent.com/six2dez/b376488a1317242bfa3851e95875cb3b/raw
 [[ ! -f ~/.config/notify/provider-config.yaml ]] && wget -q -O ~/.config/notify/provider-config.yaml https://gist.githubusercontent.com/six2dez/23a996bca189a11e88251367e6583053/raw
 #wget -q -O - https://raw.githubusercontent.com/devanshbatham/ParamSpider/master/gf_profiles/potential.json > ~/.gf/potential.json - Removed
 wget -q -O - https://raw.githubusercontent.com/m4ll0k/Bug-Bounty-Toolz/master/getjswords.py >${tools}/getjswords.py
